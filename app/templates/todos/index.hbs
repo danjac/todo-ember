@@ -1,0 +1,54 @@
+<h1>Todos list</h1>
+
+<p>
+  {{link-to "New Todo" "todos.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Label
+        </th>
+        <th>
+          Text
+        </th>
+        <th>
+          Done
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |todo|}}
+        <tr>
+          <td>
+            {{todo.label}}
+          </td>
+          <td>
+            {{todo.text}}
+          </td>
+          <td>
+            {{todo.done}}
+          </td>
+          <td>
+            {{link-to "Edit" "todos.edit" todo}}
+          </td>
+          <td>
+            {{link-to "Show" "todos.show" todo}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" todo}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Todos found
+  </p>
+{{/if}}
