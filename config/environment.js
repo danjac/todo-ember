@@ -19,6 +19,16 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['torii'] = {
+    providers: {
+      'linked-in-oauth2': {
+        apiKey: '77wfj2kjly3f1d',
+        redirectUri: 'http://localhost:4200/',
+        scope: ['r_emailaddress']
+      }
+    }
+  };
+
   ENV['ember-simple-auth'] = {
     authenticationRoute: 'login',
     routeAfterAuthentication: 'todos',

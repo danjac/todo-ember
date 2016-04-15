@@ -1,7 +1,7 @@
 {{#if session.isAuthenticated}}
+{{#link-to 'todos'}}Todos{{/link-to}}
 <a {{action 'invalidateSession'}}>Logout</a>
 {{else}}
-{{#link-to 'login'}}Login{{/link-to}}
-{{#link-to 'register'}}Register{{/link-to}}
+<a {{action 'login'}}>Login to Linkedin</a>
 {{/if}}
 {{outlet}}
