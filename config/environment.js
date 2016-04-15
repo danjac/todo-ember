@@ -24,13 +24,13 @@ module.exports = function(environment) {
       'linked-in-oauth2': {
         apiKey: '77wfj2kjly3f1d',
         redirectUri: 'http://localhost:4200/',
-        scope: ['r_emailaddress']
+        scope: ['r_emailaddress', 'r_basicprofile']
       }
     }
   };
 
   ENV['ember-simple-auth'] = {
-    authenticationRoute: 'login',
+//authenticationRoute: 'login',
     routeAfterAuthentication: 'todos',
     routeIfAlreadyAuthenticated: 'todos'
   };
